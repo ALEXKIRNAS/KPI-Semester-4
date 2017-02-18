@@ -9,9 +9,9 @@ SELECT 'Alexander' AS 'FirstName'
 SELECT * FROM "Northwind"."dbo"."Products"
 
 -- Task 3
--- Select all products from Products table with 0 ReorderLevel
+-- Select all products from Products table with 1 Discontinued
 SELECT * FROM "Northwind"."dbo"."Products"
-WHERE "ReorderLevel" = 0
+WHERE "Discontinued" = 1
 
 -- Task 4
 -- Select unique cities from Customers
