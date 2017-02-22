@@ -33,7 +33,7 @@ SELECT [OrderID] AS '1'
 -- Task 7
 -- Select all contact names that begin from "A" or "Z"
 SELECT [ContactName] FROM [Northwind].[dbo].[Customers]
-WHERE [ContactName] LIKE '[AZ]%'
+WHERE [ContactName] LIKE '[OZAoza]%'
 
 -- Task 8
 -- Select all orders where ship address contain space symbol
@@ -43,4 +43,4 @@ WHERE [ShipAddress] LIKE '% %'
 -- Task 9
 -- Select all product names from Products table that begin with "_" or "%" and end with "r"
 SELECT [ProductName] FROM [Northwind].[dbo].[Products]
-WHERE [ProductName] LIKE '[%_]%r' 
+WHERE [ProductName] LIKE '[%_]%[rR]' 
