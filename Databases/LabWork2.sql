@@ -40,8 +40,8 @@ WHERE [EmployeeID] IN (SELECT [EmployeeID]
                        FROM [Northwind].[dbo].[EmployeeTerritories]
                        WHERE [TerritoryID] IN (SELECT [TerritoryID]
                                                FROM [Northwind].[dbo].[Territories] 
-		                                       WHERE [RegionID] IN (SELECT [RegionID] 
-		                                                            FROM [Northwind].[dbo].[Region] 
+                                               WHERE [RegionID] IN (SELECT [RegionID] 
+                                                                    FROM [Northwind].[dbo].[Region] 
                                                                     WHERE [Northwind].[dbo].[Region].[RegionDescription] = 'Northern')))
 
 -- Task 2.4
