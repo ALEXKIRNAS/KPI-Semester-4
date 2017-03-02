@@ -1,10 +1,11 @@
 n = int(input())
 
 high = int(pow(n, 1/3.0))
-ans = 0
-
-for c in range(1, high + 1):
-    k = int(pow(n - pow(c, 3), 1/2.0))
-    ans += k * n - k * pow(c, 3) - (k * (k + 1) * (2*k + 1)) / 6
-    
-print(ans)
+ans = 0l
+c = 1
+while c <= high:
+    k = int(pow(n - c * c * c, 1/2.0))
+    ans += k * n - k * c * c * c - (k * (k + 1) * (2*k + 1)) / 6
+    c = c + 1
+                          
+print ans

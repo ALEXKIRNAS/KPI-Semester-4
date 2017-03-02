@@ -1,8 +1,8 @@
-n = int(input().split()[0])
+n = int(raw_input().split()[0])
 
 a = [1] * 50 
 
-for i in range(2, n):
+for i in xrange(2, n):
 	a[i] = a[i-1] + a[i-2]
 	
-print(a[n-1])
+print a[n-1]

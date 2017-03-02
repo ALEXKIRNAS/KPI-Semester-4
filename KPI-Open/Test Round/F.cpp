@@ -8,6 +8,7 @@
 #include <vector>
 #include <set>
 #include <map>
+#include <memory.h>
 using namespace std;
 
 const int Nmax = 1e2 + 17;

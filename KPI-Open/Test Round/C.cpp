@@ -30,5 +30,5 @@ int main(void) {
 	
 	sort(a, a + n);
 	for (int i = 0; i < n; i++)
-		printf("%.2Lf\n", (a[i] * a[i]) * g / (2 * v * v));
+		printf("%.2f\n", (a[i] * a[i]) * g / (2 * v * v));
 }
