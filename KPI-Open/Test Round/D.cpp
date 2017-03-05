@@ -16,6 +16,25 @@ const int Nmax = 1e5 + 17;
 const int mod = 1e9 + 7;
 
 int a[Nmax];
+int q[Nmax] = {};
+int w[Nmax] = {};
+
+int sum(int* t, int r) {
+	int result = 0;
+	for (; r >= 0; r = (r & (r + 1)) - 1)
+		result += t[r];
+	return result;
+}
+
+void inc(int* t, int i, int delta) {
+	for (; i < Nmax; i = (i | (i + 1)))
+		t[i] += delta;
+}
+
+int sum(int* t, int l, int r) {
+	return sum(t, r) - sum(t, l - 1);
+}
+
 
 int main(void) {
 	//freopen("input.txt", "r", stdin);
@@ -26,14 +45,20 @@ int main(void) {
 		scanf("%d", &a[i]);
 
 	long long ans = 0;
-	for(int i = 0; i < n; i++)
-		if (a[i] >= m) {
-			int low = i;
-			int high = n - i - 1;
+	int bal = 0;
+	inc(q, 0, 1);
 
-			ans += min(high, low) * 2 + 1;
-			if (high > low) ans++;
-		}
+	for (int i = 0; i < n; i++) {
+		bal += (a[i] >= m ? 1 : -1);
+
+		if (bal > 0) ans += sum(q, 0, bal - 1) + sum(w, 0, Nmax - 2);
+		else if (bal == 0) ans += sum(w, 0, Nmax - 2);
+		else ans += sum(w, abs(bal) + 1, Nmax - 2);
+
+		if (bal >= 0) inc(q, bal, 1);
+		else inc(w, abs(bal), 1);
+	}
+
 
 	cout << ans;
 }
