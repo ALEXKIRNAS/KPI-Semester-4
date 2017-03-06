@@ -93,7 +93,7 @@ ORDER BY [Country]
 -- Вивести прізвище та ім’я працівника, а також кількість замовлень, що він обробив за перший квартал 1998 року.
 SELECT [E].[FirstName]
       ,[E].[LastName]
-      ,SUM(1) AS [Count]
+      ,COUNT([O].[OrderID]) AS [Count]
 FROM [Northwind].[dbo].[Orders] AS [O]
 LEFT JOIN [Northwind].[dbo].[Employees] AS [E] 
           ON [E].[EmployeeID] = [O].[EmployeeID]
