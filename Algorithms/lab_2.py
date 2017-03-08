@@ -194,7 +194,7 @@ def hybrid_sort(seq, p, r):
         p - початковий індекс підмасиву
         r - кінцевий індекс підмасиву (границя не включається у підмасив)
     """
-    SIZE_OF_BASE = 80
+    SIZE_OF_BASE = 11
     if r - p <= SIZE_OF_BASE:
         insertion_sort(seq, p, r)
         return
@@ -243,10 +243,10 @@ def compare_ins_and_merge():
     """
     
     # параметри для проведення експерименту
-    repeats = 100     # кількість запусків для однієї розмірності
+    repeats = 1000     # кількість запусків для однієї розмірності
     n_begin = 1         # початкова розмірність задачі
     n_end   = 200        # кінцева розмірність задачі
-    n_step  = 2         # крок розмірності
+    n_step  = 1       # крок розмірності
     
     types = ["random"]
     data_plot = {'random': {'insertion':{}, 'merge':{}}}
@@ -361,7 +361,7 @@ def compare_merge_impr_and_hybrid():
 
 # ------------------------------------------------------------------------
 
-compare_merge_impr_and_hybrid()
+#compare_merge_impr_and_hybrid()
 
 """    
 Порівняння алгоритмів сортування за методом включенння та методом злиття.
@@ -372,4 +372,4 @@ compare_merge_impr_and_hybrid()
 Порівняння алгоритмів сортування за методом злиття та гібридного методу,
 із використанням методів включення та злиття.
 """
-#compare_merge_and_hybrid()
+compare_merge_and_hybrid()
