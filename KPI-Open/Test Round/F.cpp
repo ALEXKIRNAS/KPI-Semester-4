@@ -19,7 +19,7 @@ int sum[Nmax][Nmax] = {};
 
 
 void dfs(int n, int m) {
-	for(int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 		for (int z = 0; z < m; z++) {
 			if (i + z == 0) continue;
 			sum[i][z] = -1;
@@ -30,7 +30,7 @@ void dfs(int n, int m) {
 			if (z > 0)
 				sum[i][z] = max(sum[i][z], sum[i][z - 1]);
 
-			if (s[i][z] == '*') sum[i][z]++;
+			if (s[i][z] == '*' && sum[i][z] != -1) sum[i][z]++;
 		}
 }
 
@@ -42,14 +42,19 @@ int main(void) {
 	for (int i = 0; i < n; i++)
 		scanf("%s", &s[i]);
 
-	if (s[0][0] == '*') 
+	if (s[0][0] == '*')
 		sum[0][0] = 1;
 
 	dfs(n, m);
-	
+
+	/*for (int i = 0; i < n; i++, printf("\n"))
+		for (int z = 0; z < m; z++)
+			printf("%4d", sum[i][z]);*/
+
 	if (sum[n - 1][m - 1] == -1) {
 		printf("-1");
-	} else {
+	}
+	else {
 		int ans = sum[n - 1][m - 1];
 		int x = n - 1, y = m - 1;
 		while (x || y) {
