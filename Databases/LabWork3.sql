@@ -25,9 +25,9 @@ FROM [Students]
 WHERE [Group] ='IP-51' 
       AND [Sex] = 'F'
       AND [Name] NOT IN (SELECT DISTINCT [Name] 
-                           FROM [Students] 
-                           WHERE [Group] = 'IP-52' 
-                           AND [Sex] = 'F')
+                         FROM [Students] 
+                         WHERE [Group] = 'IP-52' 
+                         AND [Sex] = 'F')
 
 -- Task 1.4
 -- Вивести усі рядки з таблиці Numbers (Number INT). Замінити числа від 0 до 9 на її назву літерами.
@@ -54,7 +54,7 @@ SELECT [E].[LastName]
       ,[E].[FirstName]
       ,[R].[RegionDescription]
 FROM [Northwind].[dbo].[Employees] AS [E]
-    CROSS JOIN
+     CROSS JOIN
 [Northwind].[dbo].[Region] AS [R]
 
 -- Task 2.1
@@ -83,9 +83,9 @@ FROM [Northwind].[dbo].[Orders]
 -- Task 2.2
 -- Вивести в алфавітному порядку усі країни, що фігурують в адресах клієнтів, працівників, та місцях доставки замовлень.
 SELECT [Country] FROM [Northwind].[dbo].[Customers]
-    UNION
+       UNION
 SELECT [Country] FROM [Northwind].[dbo].[Employees]
-    UNION 
+       UNION 
 SELECT [ShipCountry] FROM [Northwind].[dbo].[Orders]
 ORDER BY [Country]
 
@@ -93,23 +93,24 @@ ORDER BY [Country]
 -- Вивести прізвище та ім’я працівника, а також кількість замовлень, що він обробив за перший квартал 1998 року.
 SELECT [E].[FirstName]
       ,[E].[LastName]
-      ,COUNT([O].[OrderID]) AS [Count]
+      ,COUNT([O].[OrderID]) AS [Counter]
 FROM [Northwind].[dbo].[Orders] AS [O]
-LEFT JOIN [Northwind].[dbo].[Employees] AS [E] 
-          ON [E].[EmployeeID] = [O].[EmployeeID]
+INNER JOIN [Northwind].[dbo].[Employees] AS [E] 
+           ON [E].[EmployeeID] = [O].[EmployeeID]
 WHERE  DATEPART(YEAR, OrderDate) = 1998
        AND DATEPART(MONTH, OrderDate) < 4
 GROUP BY [E].[FirstName], [E].[LastName]
 
 -- Task 2.4
--- Використовуючи СTE знайти усі замовлення, в які входять продукти, яких на складі більше 100 одиниць, проте по яким немає максимальних знижок.
+-- Використовуючи СTE знайти усі замовлення, в які входять продукти, яких на складі більше 100 одиниць, 
+-- проте по яким немає максимальних знижок.
 
 ;WITH [CTE] ([OrderID]) AS (
     SELECT DISTINCT [OrderID]
     FROM [Northwind].[dbo].[Order Details]
     WHERE [Quantity] > 100
           AND [Discount] < (SELECT MAX([Discount]) 
-                                 FROM [Northwind].[dbo].[Order Details])
+                            FROM [Northwind].[dbo].[Order Details])
 )
 
 SELECT * 
@@ -121,18 +122,18 @@ WHERE [OrderID] IN (SELECT [OrderID] FROM [CTE])
 ;WITH [SomeProducts] ([ProductName]) AS (
     SELECT DISTINCT [P].[ProductName]
     FROM [Northwind].[dbo].[Order Details] AS [OD]
-    LEFT JOIN [Northwind].[dbo].[Orders] AS [O]
-              ON [O].[OrderID] = [OD].[OrderID]
-    LEFT JOIN [Northwind].[dbo].[Employees] AS [E]
-              ON [E].[EmployeeID] = [O].[EmployeeID]
-    LEFT JOIN [Northwind].[dbo].[EmployeeTerritories] AS [ET] 
-              ON [E].[EmployeeID] = [ET].[EmployeeID]
-    LEFT JOIN [Northwind].[dbo].[Territories] AS [T] 
-              ON [T].[TerritoryID] = [ET].[TerritoryID]
-    LEFT JOIN [Northwind].[dbo].[Region] AS [R] 
-              ON [T].[RegionID] = [R].[RegionID]
-    LEFT JOIN [Northwind].[dbo].[Products] AS [P]
-              ON [P].[ProductID] = [OD].[ProductID]
+    INNER JOIN [Northwind].[dbo].[Orders] AS [O]
+               ON [O].[OrderID] = [OD].[OrderID]
+    INNER JOIN [Northwind].[dbo].[Employees] AS [E]
+               ON [E].[EmployeeID] = [O].[EmployeeID]
+    INNER JOIN [Northwind].[dbo].[EmployeeTerritories] AS [ET] 
+               ON [E].[EmployeeID] = [ET].[EmployeeID]
+    INNER JOIN [Northwind].[dbo].[Territories] AS [T] 
+               ON [T].[TerritoryID] = [ET].[TerritoryID]
+    INNER JOIN [Northwind].[dbo].[Region] AS [R] 
+               ON [T].[RegionID] = [R].[RegionID]
+    INNER JOIN [Northwind].[dbo].[Products] AS [P]
+               ON [P].[ProductID] = [OD].[ProductID]
     WHERE [R].[RegionDescription] LIKE 'Southern%'
 )
 
