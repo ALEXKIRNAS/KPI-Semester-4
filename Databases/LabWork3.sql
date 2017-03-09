@@ -24,7 +24,7 @@ SELECT [Surname]
 FROM [Students]
 WHERE [Group] ='IP-51' 
       AND [Sex] = 'F'
-      AND [Name] NOT LIKE (SELECT DISTINCT [Name] 
+      AND [Name] NOT IN (SELECT DISTINCT [Name] 
                            FROM [Students] 
                            WHERE [Group] = 'IP-52' 
                            AND [Sex] = 'F')
