@@ -1,37 +1,46 @@
 #include <cstdio>
 #include <iostream>
-#include <cmath>
-#include <ctime>
-#include <cstdlib>
-#include <algorithm>
-#include <functional>
-#include <vector>
-#include <set>
-#include <map>
 #include <memory.h>
 using namespace std;
 
-const int Nmax = 1e2 + 17;
-const int mod = 1e9 + 7;
+const int Nmax = 101;
+
+#define max(a, b) (a > b ? a : b)
 
 char s[Nmax][Nmax];
-int sum[Nmax][Nmax] = {};
+char cs[Nmax][Nmax];
+int sum[Nmax - 1][Nmax - 1];
+int csum[Nmax - 1][Nmax - 1];
 
 
-void dfs(int n, int m) {
-	for (int i = 0; i < n; i++)
-		for (int z = 0; z < m; z++) {
-			if (i + z == 0) continue;
+void dfs(int l, int r, int& n, int& m, bool erase) {
+	if (erase) memset(sum, 0, sizeof(sum));
+	if (s[l][r] == '*') sum[l][r]++;
+
+	for (int i = l; i <= n; i++)
+		for (int z = r; z <= m; z++) {
+			if (i + z == l + r) continue;
 			sum[i][z] = -1;
 			if (s[i][z] == '#') continue;
 
-			if (i > 0)
+			if (i > l)
 				sum[i][z] = max(sum[i][z], sum[i - 1][z]);
-			if (z > 0)
+			if (z > r)
 				sum[i][z] = max(sum[i][z], sum[i][z - 1]);
 
 			if (s[i][z] == '*' && sum[i][z] != -1) sum[i][z]++;
 		}
+}
+
+void delPath(int l, int r, int x, int y) {
+	while (x != l || y != r) {
+		if (s[x][y] == '*') s[x][y] = '.';
+		if (x == l) y--;
+		else if (y == r) x--;
+		else if (sum[x - 1][y] > sum[x][y - 1]) x--;
+		else y--;
+	}
+	if (s[x][y] == '*') s[x][y] = '.';
 }
 
 int main(void) {
@@ -42,33 +51,43 @@ int main(void) {
 	for (int i = 0; i < n; i++)
 		scanf("%s", &s[i]);
 
-	if (s[0][0] == '*')
-		sum[0][0] = 1;
+	memcpy(cs, s, sizeof(s));
+	int ans = 0;
+	n--;
+	m--;
 
-	dfs(n, m);
-
-	/*for (int i = 0; i < n; i++, printf("\n"))
-		for (int z = 0; z < m; z++)
-			printf("%4d", sum[i][z]);*/
-
-	if (sum[n - 1][m - 1] == -1) {
-		printf("-1");
+	if (!n && !m) {
+		if (s[0][0] == '*') cout << 1;
+		else cout << 0;
+		return 0;
 	}
-	else {
-		int ans = sum[n - 1][m - 1];
-		int x = n - 1, y = m - 1;
-		while (x || y) {
-			if (s[x][y] == '*') s[x][y] = '.';
-			if (x == 0) y--;
-			else if (y == 0) x--;
-			else if (sum[x - 1][y] > sum[x][y - 1]) x--;
-			else y--;
-		}
 
-		memset(sum, 0, sizeof(sum));
-		dfs(n, m);
-
-		ans += sum[n - 1][m - 1];
-		printf("%d", ans);
+	dfs(0, 0, n, m, false);
+	if (sum[n][m] == -1) {
+		cout << -1;
+		return 0;
 	}
+	memcpy(csum, sum, sizeof(sum));
+
+	for (int i = 0; i <= n; i++)
+		for (int z = 0; z <= m; z++)
+			if (csum[i][z] != -1) {
+				memcpy(s, cs, sizeof(s));
+				dfs(0, 0, i, z, true);
+				if (sum[i][z] == -1) continue;
+				delPath(0, 0, i, z);
+
+				dfs(i, z, n, m, false);
+				if (sum[n][m] == -1) continue;
+				delPath(i, z, n, m);
+
+				int currAns = sum[n][m];
+				dfs(0, 0, n, m, true);
+				currAns += sum[n][m];
+
+				if (currAns > ans)
+					ans = currAns;
+			}
+
+	printf("%d", ans);
 }
