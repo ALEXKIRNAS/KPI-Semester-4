@@ -48,7 +48,7 @@ SELECT [CustomerID]
 -- З таблиці OrdersArchive видалити усі замовлення, 
 -- що були зроблені замовниками із Берліну.
 DELETE FROM [dbo].[OrdersArchive]
-WHERE [ShipCountry] LIKE 'Germany'
+WHERE [ShipCity] LIKE 'Berlin'
 
 
 -- Task 7
@@ -64,10 +64,7 @@ VALUES ('Alexander Zarichkovyi'),
 -- як такі, що більше не виробляються.
 UPDATE [Products]
 SET [Discontinued] = 1
-WHERE [ProductID] IN (SELECT [ProductID]
-                      FROM [dbo].[Products]
-                          EXCEPT SELECT DISTINCT [ProductID]
-                                 FROM [dbo].[Order Details])
+WHERE [ProductID] NOT IN (SELECT [ProductID] FROM [dbo].[Order Details])
  
 
 -- Task 9
