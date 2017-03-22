@@ -6,6 +6,7 @@
 #include <time.h>
 using namespace std;
 
+// QuickSort 1 pivot
 template <class T>
 int partition1(T* (&b), T* (&e), T* (&wall)) {
 	const T* pivot = e - 1;
@@ -23,7 +24,6 @@ int partition1(T* (&b), T* (&e), T* (&wall)) {
 	return counter;
 }
 
-// QuickSort 1 pivot
 template <class T>
 int quickSort1(T* b, T* e) {
 	if (e <= b) return 0;
@@ -35,6 +35,9 @@ int quickSort1(T* b, T* e) {
 	counter += quickSort1(wall + 1, e);
 	return counter;
 }
+
+// --------------------------------------------------------------------
+// QuickSort 3-way pivot
 
 template <class T>
 void swapPivots(T* (&b), T* (&e), pair<T, int> arr[3]) {
@@ -65,7 +68,6 @@ int partition13(T* (&b), T* (&e), T* (&wall)) {
 	return counter;
 }
 
-// QuickSort 3-way pivot
 template <class T>
 int quickSort13(T* b, T* e) {
 	if ((e - b) <= 3) {
@@ -79,6 +81,9 @@ int quickSort13(T* b, T* e) {
 	counter += quickSort13(wall + 1, e);
 	return counter;
 }
+
+//--------------------------------------------------------------------------
+// QuickSort 3 pivot
 
 template <class T>
 void swapPivots(T* b, T* e, T** pivot) {
@@ -187,6 +192,134 @@ int quickSort3(T* b, T* e) {
 	return counter;
 }
 
+//--------------------------------------------------------------------------
+// QuickSort 2 pivot
+
+template <class T> 
+int partition2(T* begin, T* end, int cb[2]) {
+	if (*begin > *(end - 1)) swap(*begin, *(end - 1));
+	T p = *begin; T q = *(end - 1);
+	T* a = begin + 1; T* b = end - 2;
+	T* c = begin + 1;
+
+	int counter = 0;
+	while (c <= b) {
+		if (*c < p) {
+			swap(*c, *a);
+			a++;
+			counter += 1;
+		}
+		else if (*c > q) {
+			swap(*c, *b);
+			b--;
+			counter += 2;
+		}
+		c++;
+	}
+
+	swap(*begin, *a);
+	swap(*(end - 1), *b);
+	cb[0] = a - begin;
+	cb[1] = b - begin;
+	return counter;
+}
+
+template <class T>
+int partition2Left(T* (&a), T* (&b), T* (&c), T& p, T& q) {
+	int counter = 1;
+	while (b <= c && *b < q) {
+		if (*b < p) {
+			swap(*a, *b);
+			a++;
+		}
+		counter += 2;
+	}
+	return counter;
+}
+
+template <class T>
+int partition2Right(T* (&b), T* (&c), T* (&d), T& p, T& q) {
+	int counter = 1;
+	while (b <= c && *c > p) {
+		if (*c > q) {
+			swap(*c, *d);
+			d--;
+		}
+		counter += 2;
+	}
+	return counter;
+}
+
+template <class T>
+int partition2Alt(T* begin, T* end, int cb[2]) {
+	if (*begin > *(end - 1)) swap(*begin, *(end - 1));
+	T p = *begin; T q = *(end - 1);
+	T* a = begin + 1; T* b = end - 2;
+	T* c = begin + 1; T* d = end - 2;
+
+	int counter = 0;
+	while (b <= c) {
+		counter += partition2Left(a, b, c, p, q);
+		counter += partition2Right(b, c, d, p, q);
+
+		if (b <= c) {
+			swap(*b, *c);
+			if (*b < p) {
+				swap(*a, *b);
+				a++;
+			}
+			if (*c > q) {
+				swap(*c, *d);
+				d--;
+			}
+			counter += 2;
+			b++; c--;
+		}
+	}
+
+	swap(*begin, *a);
+	swap(*(end - 1), *d);
+	cb[0] = a - begin;
+	cb[1] = d - begin;
+	return counter;
+}
+
+template <class T>
+int quickSort2(T* b, T* e) {
+	if ((e - b) <= 2) {
+		return quickSort1(b, e);
+	}
+
+	int cb[2];
+	int counter = partition2(b, e, cb);
+	T* p = b + cb[0]; T* q = b + cb[1];
+
+	counter += quickSort2(b, p);
+	counter += quickSort2(p + 1, q);
+	counter += quickSort2(q + 1, e);
+
+	return counter;
+}
+
+template <class T>
+int quickSort2Alt(T* b, T* e) {
+	if ((e - b) <= 2) {
+		return quickSort1(b, e);
+	}
+
+	int cb[2];
+	int counter = partition2Alt(b, e, cb);
+	T* p = b + cb[0]; T* q = b + cb[1];
+
+	counter += quickSort2(b, p);
+	counter += quickSort2(p + 1, q);
+	counter += quickSort2(q + 1, e);
+
+	return counter;
+}
+
+//--------------------------------------------------------------------------
+
 unsigned int test(int* b, int* e, int (*func) (int*, int*), char* lable) {
 	const int size = e - b;
 	int* tmp = new int[size];
@@ -197,6 +330,12 @@ unsigned int test(int* b, int* e, int (*func) (int*, int*), char* lable) {
 	clock_t end = clock();
 
 	unsigned int res = end - start;
+	#ifdef DEBUG
+	for (int* i = b; i < e; i++) {
+		printf("%d\n", tmp[i - b]);
+		}
+	#endif // DEBUG
+
 	printf("%s: %d, %d ms\n", lable, counter, res);
 	return res;
 }
@@ -212,5 +351,7 @@ int main(int argc, char* argv[]) {
 
 	test(arr, arr + n, quickSort1, "QuickSort");
 	test(arr, arr + n, quickSort13, "QuickSort (3-way pivot)");
+	test(arr, arr + n, quickSort2, "QuickSort (2 pivot)");
+	test(arr, arr + n, quickSort2Alt, "QuickSort (2 pivot alternative)");
 	test(arr, arr + n, quickSort3, "QuickSort (3 pivot)");
 }
