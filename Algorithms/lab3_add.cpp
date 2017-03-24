@@ -207,13 +207,13 @@ int partition2(T* begin, T* end, int cb[2]) {
 		if (*c < p) {
 			swap(*c, *a);
 			a++;
-			counter += 1;
 		}
 		else if (*c > q) {
 			swap(*c, *b);
 			b--;
-			counter += 2;
+			counter++;
 		}
+        counter++;
 		c++;
 	}
 
