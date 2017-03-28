@@ -24,20 +24,23 @@ ALTER TABLE [Student]
 		INTEGER NOT NULL
 
 ALTER TABLE [Student] 
-	ADD PRIMARY KEY ([StudentId])
+	ADD CONSTRAINT PK__Student PRIMARY KEY ([StudentId])
 
 -- Task 4
 -- Модифікувати таблицю Student. Атрибут StudentId повинен 
 -- заповнюватися автоматично починаючи з 1 і кроком в 1.
-DROP TABLE [Student]
-CREATE TABLE [Student] (
-	[StudentId] INTEGER IDENTITY(1, 1) PRIMARY KEY,
-	[SecondName] NVARCHAR(255) NOT NULL,
-	[FirstName] NVARCHAR(255) NOT NULL,
-	[Sex] CHAR(1) NULL)
--- SQL Server забороняє додавати IDENTITY після того як 
--- таблиця була створена. Щоб поле мало таку властивість
--- необхідно її перестворити (про це каже і Design)
+ALTER TABLE [Student] 
+	DROP CONSTRAINT PK__Student
+
+ALTER TABLE [Student] 
+	DROP COLUMN StudentId 
+
+ALTER TABLE [Student] 
+	ADD StudentId INT IDENTITY(1,1)
+
+ALTER TABLE [Student] 
+	ADD CONSTRAINT PK__Student PRIMARY KEY (StudentId)
+
 
 
 -- Task 5
@@ -92,22 +95,11 @@ GO
 -- Змінити тип даних первинного ключа на TinyInt (або SmallInt) не втрачаючи дані.
 
 -- Видаляємо первичний ключ
-DECLARE @table NVARCHAR(512), @sql NVARCHAR(MAX);
-SELECT @table = N'dbo.Student';
+ALTER TABLE [Student] 
+	DROP CONSTRAINT PK__Student
 
-SELECT @sql = 'ALTER TABLE ' + @table 
-    + ' DROP CONSTRAINT ' + name + ';'
-    FROM sys.key_constraints
-    WHERE [type] = 'PK'
-    AND [parent_object_id] = OBJECT_ID(@table);
-
-EXEC sp_executeSQL @sql;
-
-
--- Змінюємо тип
 ALTER TABLE [Student]
-    ALTER COLUMN [StudentID] TinyInt
+    ALTER COLUMN [StudentId] TinyInt
 
--- Добавляємо первичний ключ
 ALTER TABLE [Student]
-    ADD PRIMARY KEY ([StudentID])
+    ADD PRIMARY KEY ([StudentId])
