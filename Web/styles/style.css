@@ -1,0 +1,113 @@
+.wrapper, footer, header {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.wraper {
+	position: relative;
+}
+
+nav, .contentWrapper {
+	position: relative;
+	top: 0px;
+	display: inline-block;
+	float: left;
+	clear: float;
+}
+
+.contentWrapper {
+	width: 90%;
+}
+
+header {
+	height: 100px;
+	width: 100%;
+	background: yellow;
+}
+
+footer {
+	background: grey;
+}
+
+nav {
+	height: 100%;
+	background: green;
+}
+
+nav div {
+	width: 150px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+	text-align: center;
+	vertical-align: middle;
+	height: 100%;
+	font: 20pt sans-serif;
+	font-style: italic;
+}
+
+nav div:hover {
+	background: red;
+}
+
+.someDiv {
+	background: black;
+	height: 100px;
+	width: 100%;
+}
+
+.otherDiv {
+	display: inline-block;
+	background: blue;
+}
+
+.sideDiv {
+	display: inline-block;
+	background: red;
+	width: 100px;
+	height: 100%;
+}
+
+table {
+	border: 1px solid #69c;
+}
+
+td {
+	border-top: 1px #fff;
+	padding: 10px;
+	background:#ccddff;
+}
+
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+	background: black;
+}
+
+.figure div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.rectangle {
+	width: 200px;
+	height: 100px;
+	background: red;
+}
+
+.triangle-right {
+	margin-left: -5px;
+	border-top: 100px solid transparent;
+	border-left: 100px solid red;
+	border-bottom: 100px solid transparent;
+}
+
+@media screen and (max-width: 700px) {
+	.wrapper, footer {
+		display: block;
+	}
+
+	nav, .contentWrapper {
+		display: block;
+		clear: left;
+	}
+}
