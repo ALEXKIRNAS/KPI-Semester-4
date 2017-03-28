@@ -4,7 +4,11 @@ import collections
 from pylab import figure, show
 from math import log
 
-def plot_data(data, logarithmic=False, oneplot=False, data_2={}):
+def plot_data(data, logarithmic=False, oneplot=False, data_2={}, 
+              label_sort_type=True, label_data2_label=True,
+              data_label='', data2_label='',
+              legend_pos=0, legend2_pos=0, 
+              show_markers=True):
 #    print data
     fig = figure(1)
     num = 0
@@ -16,12 +20,14 @@ def plot_data(data, logarithmic=False, oneplot=False, data_2={}):
         num = len(data)
         if len(data_2)>0:
             num += 1
-    colors = ['r','b','g']
-    markers = ['s','o','x']
+    colors = ['r','b','g','c','m','y']
+    markers = ['s','o','x','^','v','<','>']
     lines = ['-','--',':']
     if oneplot==True:
         ax = fig.add_subplot(num, 1, 1)
         ax.grid(True)
+        if data_label:
+            ax.set_title(data_label)
         i = -1
         line_titles = []
         x_max = y_max = 0
@@ -42,11 +48,17 @@ def plot_data(data, logarithmic=False, oneplot=False, data_2={}):
                 x_max = max(x_max, max(xs))
                 ys.insert(0,0)
                 y_max = max(y_max, max(ys))
-                ax.plot(xs, ys, colors[j%sort_num]+markers[j%sort_num]+lines[i%num], label=sort_type )
-                line_titles.append(sort_type+' '+label)
+                line = colors[j%sort_num]+lines[i%num]
+                if show_markers:
+                    line += markers[j%sort_num]
+                ax.plot(xs, ys, line, label=sort_type )
+                if label_sort_type:
+                    line_titles.append(sort_type+' '+label)
+                else:
+                    line_titles.append(sort_type)
         ax.set_xlim( (0, x_max*1.1) )
         ax.set_ylim( (0, y_max*1.1) )
-        ax.legend(line_titles, loc=4)
+        ax.legend(line_titles, loc=legend_pos)
     else:
         i = 0
         for label, value in data.iteritems():
@@ -69,14 +81,19 @@ def plot_data(data, logarithmic=False, oneplot=False, data_2={}):
                 x_max = max(x_max, max(xs))
                 ys.insert(0,0)
                 y_max = max(y_max, max(ys))
-                ax.plot(xs, ys, colors[j%num]+markers[j%num]+'-', label=sort_type )
+                line = colors[j%num]+'-'
+                if show_markers:
+                    line += markers[j%num]
+                ax.plot(xs, ys, line, label=sort_type )
             ax.set_xlim( (0, x_max*1.1) )
             ax.set_ylim( (0, y_max*1.1) )
-            ax.legend(loc=4)
+            ax.legend(loc=legend_pos)
             
     if len(data_2)>0:
         ax = fig.add_subplot(num,1,num)
         ax.grid(True)
+        if data2_label:
+            ax.set_title(data2_label)
         i = -1
         line_titles = []
         x_max = y_max = 0
@@ -97,9 +114,15 @@ def plot_data(data, logarithmic=False, oneplot=False, data_2={}):
                 x_max = max(x_max, max(xs))
                 ys.insert(0,0)
                 y_max = max(y_max, max(ys))
-                ax.plot(xs, ys, colors[j%sort_num]+markers[j%sort_num]+lines[i%num], label=sort_type )
-                line_titles.append(name+' '+label)
+                line = colors[j%sort_num]+lines[i%num]
+                if show_markers:
+                    line += markers[j%sort_num]
+                ax.plot(xs, ys, line )
+                if label_data2_label:
+                    line_titles.append(name+' '+label)
+                else:
+                    line_titles.append(name)
         ax.set_xlim( (0, x_max*1.1) )
         ax.set_ylim( (0, y_max*1.1) )
-        ax.legend(line_titles, loc=4)
+        ax.legend(line_titles, loc=legend2_pos)
     show()

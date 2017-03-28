@@ -1,0 +1,599 @@
+DATA SIZE:  100
+Merge time: 0.000673934815738 op_count: 672
+Hybrid time: 0.00034205464661 op_count: 901
+Quick time: 0.000337414392053 op_count: 642
+Randomized quick time: 0.000570728961362 op_count: 656
+
+DATA SIZE:  200
+Merge time: 0.00142379268874 op_count: 1544
+Hybrid time: 0.000741717173551 op_count: 1990
+Quick time: 0.000756112857919 op_count: 1592
+Randomized quick time: 0.00124902187289 op_count: 1568
+
+DATA SIZE:  300
+Merge time: 0.0022764680986 op_count: 2488
+Hybrid time: 0.00148249009301 op_count: 3913
+Quick time: 0.00126250962064 op_count: 2602
+Randomized quick time: 0.00199357739601 op_count: 2555
+
+DATA SIZE:  400
+Merge time: 0.00305351937188 op_count: 3488
+Hybrid time: 0.0016866808491 op_count: 4396
+Quick time: 0.0016987242792 op_count: 3642
+Randomized quick time: 0.00270965723297 op_count: 3627
+
+DATA SIZE:  500
+Merge time: 0.00385162918751 op_count: 4488
+Hybrid time: 0.00241729046569 op_count: 6251
+Quick time: 0.00226143266812 op_count: 4806
+Randomized quick time: 0.00347412031417 op_count: 4828
+
+DATA SIZE:  600
+Merge time: 0.0046963371043 op_count: 5576
+Hybrid time: 0.00323003621969 op_count: 8466
+Quick time: 0.00286709064979 op_count: 5952
+Randomized quick time: 0.00424935850786 op_count: 5944
+
+DATA SIZE:  700
+Merge time: 0.00592974805457 op_count: 6676
+Hybrid time: 0.00400836698519 op_count: 7818
+Quick time: 0.00351074508073 op_count: 7194
+Randomized quick time: 0.00654432616436 op_count: 7323
+
+DATA SIZE:  800
+Merge time: 0.00647961123551 op_count: 7776
+Hybrid time: 0.00416940979929 op_count: 9572
+Quick time: 0.00484571083755 op_count: 8419
+Randomized quick time: 0.00771936377389 op_count: 8390
+
+DATA SIZE:  900
+Merge time: 0.00786432074468 op_count: 8876
+Hybrid time: 0.00455774965813 op_count: 11459
+Quick time: 0.00448350837886 op_count: 9703
+Randomized quick time: 0.00710602325156 op_count: 9793
+
+DATA SIZE:  1000
+Merge time: 0.00862579461915 op_count: 9976
+Hybrid time: 0.00526554631943 op_count: 13512
+Quick time: 0.0052987963554 op_count: 10934
+Randomized quick time: 0.00775184276214 op_count: 11077
+
+DATA SIZE:  1100
+Merge time: 0.00952330254264 op_count: 11152
+Hybrid time: 0.0063821658898 op_count: 15740
+Quick time: 0.00575350777822 op_count: 12269
+Randomized quick time: 0.00842634748271 op_count: 12258
+
+DATA SIZE:  1200
+Merge time: 0.0100937437579 op_count: 12352
+Hybrid time: 0.00694547212006 op_count: 18101
+Quick time: 0.00641208309995 op_count: 13583
+Randomized quick time: 0.00930928651546 op_count: 13516
+
+DATA SIZE:  1300
+Merge time: 0.0110520163876 op_count: 13552
+Hybrid time: 0.00685668709291 op_count: 17206
+Quick time: 0.00683503629651 op_count: 14864
+Randomized quick time: 0.0104266436097 op_count: 14919
+
+DATA SIZE:  1400
+Merge time: 0.0119927169515 op_count: 14752
+Hybrid time: 0.00715166313037 op_count: 17051
+Quick time: 0.00749979676188 op_count: 16330
+Randomized quick time: 0.0109317832294 op_count: 16285
+
+DATA SIZE:  1500
+Merge time: 0.0129581469153 op_count: 15952
+Hybrid time: 0.00800486933395 op_count: 18860
+Quick time: 0.00810245156857 op_count: 17578
+Randomized quick time: 0.0122183685357 op_count: 17601
+
+DATA SIZE:  1600
+Merge time: 0.0141216858567 op_count: 17152
+Hybrid time: 0.00840830887725 op_count: 20723
+Quick time: 0.00874259158636 op_count: 19234
+Randomized quick time: 0.0133334683598 op_count: 19062
+
+DATA SIZE:  1700
+Merge time: 0.0147009550096 op_count: 18352
+Hybrid time: 0.00922917577513 op_count: 22666
+Quick time: 0.00923072625152 op_count: 20386
+Randomized quick time: 0.0140247517492 op_count: 20567
+
+DATA SIZE:  1800
+Merge time: 0.0155527951178 op_count: 19552
+Hybrid time: 0.009864862713 op_count: 24746
+Quick time: 0.00999533180893 op_count: 21959
+Randomized quick time: 0.0151438492881 op_count: 21764
+
+DATA SIZE:  1900
+Merge time: 0.016603981791 op_count: 20752
+Hybrid time: 0.0107663962878 op_count: 26851
+Quick time: 0.0106593687186 op_count: 23486
+Randomized quick time: 0.0154687509167 op_count: 23304
+
+DATA SIZE:  2000
+Merge time: 0.0175054539055 op_count: 21952
+Hybrid time: 0.0117018559621 op_count: 29071
+Quick time: 0.0117835367344 op_count: 25019
+Randomized quick time: 0.0163274885495 op_count: 24633
+
+DATA SIZE:  2100
+Merge time: 0.0183775787146 op_count: 23204
+Hybrid time: 0.0125202951772 op_count: 31350
+Quick time: 0.0118246564857 op_count: 26239
+Randomized quick time: 0.0172470607298 op_count: 26173
+
+DATA SIZE:  2200
+Merge time: 0.0195838716932 op_count: 24504
+Hybrid time: 0.0134933043166 op_count: 33659
+Quick time: 0.012415429894 op_count: 27573
+Randomized quick time: 0.0182257465683 op_count: 27710
+
+DATA SIZE:  2300
+Merge time: 0.020615505602 op_count: 25804
+Hybrid time: 0.0144151644972 op_count: 36148
+Quick time: 0.0133123399762 op_count: 29230
+Randomized quick time: 0.0190311338452 op_count: 28959
+
+DATA SIZE:  2400
+Merge time: 0.0215929426785 op_count: 27104
+Hybrid time: 0.0153337784551 op_count: 38635
+Quick time: 0.0137577988264 op_count: 30641
+Randomized quick time: 0.0201791344989 op_count: 30368
+
+DATA SIZE:  2500
+Merge time: 0.0225768973431 op_count: 28404
+Hybrid time: 0.0162002125969 op_count: 41177
+Quick time: 0.0144604300267 op_count: 32052
+Randomized quick time: 0.0211740849745 op_count: 32206
+
+DATA SIZE:  2600
+Merge time: 0.0235386173382 op_count: 29704
+Hybrid time: 0.0150807211531 op_count: 37098
+Quick time: 0.0154433789769 op_count: 33756
+Randomized quick time: 0.0219448198025 op_count: 33242
+
+DATA SIZE:  2700
+Merge time: 0.0243249072159 op_count: 31004
+Hybrid time: 0.0143928935102 op_count: 35045
+Quick time: 0.0158484723617 op_count: 34766
+Randomized quick time: 0.0227793448609 op_count: 35084
+
+DATA SIZE:  2800
+Merge time: 0.025588701916 op_count: 32304
+Hybrid time: 0.0160389658462 op_count: 36919
+Quick time: 0.0168304044229 op_count: 36693
+Randomized quick time: 0.0239575392962 op_count: 36661
+
+DATA SIZE:  2900
+Merge time: 0.0262808429563 op_count: 33604
+Hybrid time: 0.015970842663 op_count: 38767
+Quick time: 0.0173909644941 op_count: 38105
+Randomized quick time: 0.0247817585755 op_count: 38085
+
+DATA SIZE:  3000
+Merge time: 0.0276820601501 op_count: 34904
+Hybrid time: 0.0165946901073 op_count: 40684
+Quick time: 0.0179796678069 op_count: 39784
+Randomized quick time: 0.0258183176912 op_count: 39420
+
+DATA SIZE:  3100
+Merge time: 0.0281616881475 op_count: 36204
+Hybrid time: 0.0174456781518 op_count: 42690
+Quick time: 0.0184011347811 op_count: 40838
+Randomized quick time: 0.0263799114133 op_count: 40910
+
+DATA SIZE:  3200
+Merge time: 0.0295731440728 op_count: 37504
+Hybrid time: 0.0181939352627 op_count: 44649
+Quick time: 0.0193786836036 op_count: 42708
+Randomized quick time: 0.0277411793957 op_count: 42448
+
+DATA SIZE:  3300
+Merge time: 0.0305037902862 op_count: 38804
+Hybrid time: 0.0190967846472 op_count: 46704
+Quick time: 0.0198222232155 op_count: 43647
+Randomized quick time: 0.0284156086877 op_count: 43894
+
+DATA SIZE:  3400
+Merge time: 0.0315808796928 op_count: 40104
+Hybrid time: 0.0197153967893 op_count: 48820
+Quick time: 0.0209159963068 op_count: 45678
+Randomized quick time: 0.0299461439932 op_count: 45609
+
+DATA SIZE:  3500
+Merge time: 0.032924354911 op_count: 41404
+Hybrid time: 0.0206831510709 op_count: 50898
+Quick time: 0.0213112644205 op_count: 46895
+Randomized quick time: 0.030568337596 op_count: 47140
+
+DATA SIZE:  3600
+Merge time: 0.0335505182921 op_count: 42704
+Hybrid time: 0.0215271270511 op_count: 53103
+Quick time: 0.0219471748504 op_count: 48349
+Randomized quick time: 0.0317699567962 op_count: 48520
+
+DATA SIZE:  3700
+Merge time: 0.0346396623034 op_count: 44004
+Hybrid time: 0.0224854499664 op_count: 55316
+Quick time: 0.0227448516501 op_count: 50335
+Randomized quick time: 0.0324186705294 op_count: 50348
+
+DATA SIZE:  3800
+Merge time: 0.0352985058157 op_count: 45304
+Hybrid time: 0.0235693949929 op_count: 57545
+Quick time: 0.0237754183842 op_count: 52024
+Randomized quick time: 0.0337047138673 op_count: 51977
+
+DATA SIZE:  3900
+Merge time: 0.0372211272662 op_count: 46604
+Hybrid time: 0.0245017565082 op_count: 59813
+Quick time: 0.024407694274 op_count: 53706
+Randomized quick time: 0.0343813836675 op_count: 53219
+
+DATA SIZE:  4000
+Merge time: 0.0376879771032 op_count: 47904
+Hybrid time: 0.0252911780687 op_count: 62093
+Quick time: 0.0250167158116 op_count: 55462
+Randomized quick time: 0.035492508126 op_count: 55185
+
+DATA SIZE:  4100
+Merge time: 0.0383455550915 op_count: 49208
+Hybrid time: 0.0261074242676 op_count: 64472
+Quick time: 0.0258464106472 op_count: 56707
+Randomized quick time: 0.0365179708594 op_count: 56406
+
+DATA SIZE:  4200
+Merge time: 0.0396664604021 op_count: 50608
+Hybrid time: 0.0269933748563 op_count: 66830
+Quick time: 0.0264032523687 op_count: 57953
+Randomized quick time: 0.037105939442 op_count: 57838
+
+DATA SIZE:  4300
+Merge time: 0.0408568742675 op_count: 52008
+Hybrid time: 0.0279605173283 op_count: 69297
+Quick time: 0.0270877723286 op_count: 59687
+Randomized quick time: 0.0378440639802 op_count: 59356
+
+DATA SIZE:  4400
+Merge time: 0.0420663324529 op_count: 53408
+Hybrid time: 0.0290707031201 op_count: 71768
+Quick time: 0.0281258372223 op_count: 61228
+Randomized quick time: 0.0397975357203 op_count: 61477
+
+DATA SIZE:  4500
+Merge time: 0.0427924498784 op_count: 54808
+Hybrid time: 0.0300020142225 op_count: 74320
+Quick time: 0.0283931421452 op_count: 62191
+Randomized quick time: 0.0405879434397 op_count: 63137
+
+DATA SIZE:  4600
+Merge time: 0.0436336852868 op_count: 56208
+Hybrid time: 0.0311318198263 op_count: 76824
+Quick time: 0.0294538970735 op_count: 64781
+Randomized quick time: 0.0417354216807 op_count: 65254
+
+DATA SIZE:  4700
+Merge time: 0.0450247587333 op_count: 57608
+Hybrid time: 0.0319934349198 op_count: 79349
+Quick time: 0.0304955015232 op_count: 66468
+Randomized quick time: 0.0429441702786 op_count: 66017
+
+DATA SIZE:  4800
+Merge time: 0.0457832853058 op_count: 59008
+Hybrid time: 0.0332379897445 op_count: 82051
+Quick time: 0.0310855402013 op_count: 67840
+Randomized quick time: 0.0437643108272 op_count: 67909
+
+DATA SIZE:  4900
+Merge time: 0.047238442316 op_count: 60408
+Hybrid time: 0.0342709143201 op_count: 84690
+Quick time: 0.0317077282169 op_count: 69049
+Randomized quick time: 0.044271531717 op_count: 69058
+
+DATA SIZE:  5000
+Merge time: 0.049028052448 op_count: 61808
+Hybrid time: 0.0347932348944 op_count: 87467
+Quick time: 0.0328789050005 op_count: 70343
+Randomized quick time: 0.0454923377133 op_count: 70738
+
+DATA SIZE:  5100
+Merge time: 0.0489856112998 op_count: 63208
+Hybrid time: 0.0358230613109 op_count: 90223
+Quick time: 0.0329694695834 op_count: 72626
+Randomized quick time: 0.046409376052 op_count: 72821
+
+DATA SIZE:  5200
+Merge time: 0.0510795115022 op_count: 64608
+Hybrid time: 0.0331931600245 op_count: 79409
+Quick time: 0.033886044176 op_count: 73874
+Randomized quick time: 0.0482150077733 op_count: 74535
+
+DATA SIZE:  5300
+Merge time: 0.0516210412217 op_count: 66008
+Hybrid time: 0.0317277335527 op_count: 73545
+Quick time: 0.0350189088278 op_count: 76306
+Randomized quick time: 0.0483816937628 op_count: 75448
+
+DATA SIZE:  5400
+Merge time: 0.0524081775756 op_count: 67408
+Hybrid time: 0.0322905201639 op_count: 75477
+Quick time: 0.0361311591278 op_count: 78261
+Randomized quick time: 0.0494616271062 op_count: 76648
+
+DATA SIZE:  5500
+Merge time: 0.0542504340635 op_count: 68808
+Hybrid time: 0.0338168426434 op_count: 77451
+Quick time: 0.0369071711628 op_count: 79022
+Randomized quick time: 0.0505457006407 op_count: 79170
+
+DATA SIZE:  5600
+Merge time: 0.0552350759664 op_count: 70208
+Hybrid time: 0.0340866897888 op_count: 79348
+Quick time: 0.0371214442059 op_count: 80377
+Randomized quick time: 0.0511275818575 op_count: 80518
+
+DATA SIZE:  5700
+Merge time: 0.0553865058269 op_count: 71608
+Hybrid time: 0.0344954121264 op_count: 81313
+Quick time: 0.0381245353809 op_count: 82417
+Randomized quick time: 0.0528268955971 op_count: 82020
+
+DATA SIZE:  5800
+Merge time: 0.0573202236597 op_count: 73008
+Hybrid time: 0.0354992464126 op_count: 83398
+Quick time: 0.0383299218197 op_count: 83524
+Randomized quick time: 0.0537425399038 op_count: 84147
+
+DATA SIZE:  5900
+Merge time: 0.0580322862263 op_count: 74408
+Hybrid time: 0.0362290458704 op_count: 85322
+Quick time: 0.0396897706273 op_count: 85998
+Randomized quick time: 0.0552125172333 op_count: 85323
+
+DATA SIZE:  6000
+Merge time: 0.058785437814 op_count: 75808
+Hybrid time: 0.0369609964395 op_count: 87455
+Quick time: 0.0400134598112 op_count: 86617
+Randomized quick time: 0.0559858948554 op_count: 87621
+
+DATA SIZE:  6100
+Merge time: 0.0599839532678 op_count: 77208
+Hybrid time: 0.0378192759136 op_count: 89456
+Quick time: 0.0413363067094 op_count: 88966
+Randomized quick time: 0.0583947345263 op_count: 88575
+
+DATA SIZE:  6200
+Merge time: 0.0611020814098 op_count: 78608
+Hybrid time: 0.0388095609917 op_count: 91586
+Quick time: 0.0415157876211 op_count: 90378
+Randomized quick time: 0.0576546628133 op_count: 91047
+
+DATA SIZE:  6300
+Merge time: 0.061715447075 op_count: 80008
+Hybrid time: 0.0393015481018 op_count: 93559
+Quick time: 0.042051299816 op_count: 92171
+Randomized quick time: 0.0584880229191 op_count: 92266
+
+DATA SIZE:  6400
+Merge time: 0.0629722688219 op_count: 81408
+Hybrid time: 0.0401868924682 op_count: 95705
+Quick time: 0.0432827859407 op_count: 94188
+Randomized quick time: 0.0595764322002 op_count: 93532
+
+DATA SIZE:  6500
+Merge time: 0.0638232512791 op_count: 82808
+Hybrid time: 0.0410225824791 op_count: 97873
+Quick time: 0.0435892299161 op_count: 95579
+Randomized quick time: 0.0603070362295 op_count: 95331
+
+DATA SIZE:  6600
+Merge time: 0.0652209065677 op_count: 84208
+Hybrid time: 0.0419166206878 op_count: 100044
+Quick time: 0.0446451490343 op_count: 97172
+Randomized quick time: 0.0616544281466 op_count: 96939
+
+DATA SIZE:  6700
+Merge time: 0.066174321038 op_count: 85608
+Hybrid time: 0.0429456257709 op_count: 102229
+Quick time: 0.045075044454 op_count: 98497
+Randomized quick time: 0.0626939066278 op_count: 99266
+
+DATA SIZE:  6800
+Merge time: 0.0673588822043 op_count: 87008
+Hybrid time: 0.0441023090924 op_count: 104373
+Quick time: 0.0460424523229 op_count: 100221
+Randomized quick time: 0.0641531563369 op_count: 101053
+
+DATA SIZE:  6900
+Merge time: 0.0687175437102 op_count: 88408
+Hybrid time: 0.0450517146732 op_count: 106597
+Quick time: 0.0464681712341 op_count: 102187
+Randomized quick time: 0.0647427173007 op_count: 102321
+
+DATA SIZE:  7000
+Merge time: 0.0693003105143 op_count: 89808
+Hybrid time: 0.0454556486928 op_count: 108803
+Quick time: 0.0477961752122 op_count: 103879
+Randomized quick time: 0.0657149079003 op_count: 103736
+
+DATA SIZE:  7100
+Merge time: 0.0703458149011 op_count: 91208
+Hybrid time: 0.0464021600511 op_count: 111167
+Quick time: 0.048768452415 op_count: 106421
+Randomized quick time: 0.0666787482767 op_count: 105927
+
+DATA SIZE:  7200
+Merge time: 0.0714978747299 op_count: 92608
+Hybrid time: 0.0475074373978 op_count: 113399
+Quick time: 0.0499421183419 op_count: 107683
+Randomized quick time: 0.0676591550043 op_count: 107129
+
+DATA SIZE:  7300
+Merge time: 0.0729428069769 op_count: 94008
+Hybrid time: 0.0483689407453 op_count: 115640
+Quick time: 0.0506343068742 op_count: 108947
+Randomized quick time: 0.0687621611127 op_count: 108742
+
+DATA SIZE:  7400
+Merge time: 0.0736115400142 op_count: 95408
+Hybrid time: 0.0494712652027 op_count: 117939
+Quick time: 0.0509932742849 op_count: 110825
+Randomized quick time: 0.0698499222667 op_count: 109776
+
+DATA SIZE:  7500
+Merge time: 0.0746858664998 op_count: 96808
+Hybrid time: 0.0502394522209 op_count: 120289
+Quick time: 0.0517584218106 op_count: 112462
+Randomized quick time: 0.0715602066743 op_count: 112861
+
+DATA SIZE:  7600
+Merge time: 0.0760469361329 op_count: 98208
+Hybrid time: 0.0513373878524 op_count: 122642
+Quick time: 0.052751059143 op_count: 114652
+Randomized quick time: 0.0723671863323 op_count: 114698
+
+DATA SIZE:  7700
+Merge time: 0.0770395036241 op_count: 99608
+Hybrid time: 0.0525263741621 op_count: 124996
+Quick time: 0.0534390935161 op_count: 116017
+Randomized quick time: 0.0736496007174 op_count: 115944
+
+DATA SIZE:  7800
+Merge time: 0.07848510076 op_count: 101008
+Hybrid time: 0.0532763661303 op_count: 127406
+Quick time: 0.0545376772746 op_count: 118158
+Randomized quick time: 0.0743518799177 op_count: 117622
+
+DATA SIZE:  7900
+Merge time: 0.0791719087202 op_count: 102408
+Hybrid time: 0.0542289341243 op_count: 129695
+Quick time: 0.0551397482082 op_count: 118861
+Randomized quick time: 0.0760800660419 op_count: 120226
+
+DATA SIZE:  8000
+Merge time: 0.080092293853 op_count: 103808
+Hybrid time: 0.0550499742286 op_count: 132408
+Quick time: 0.0560104203188 op_count: 121247
+Randomized quick time: 0.0765543805148 op_count: 121008
+
+DATA SIZE:  8100
+Merge time: 0.0812771204161 op_count: 105208
+Hybrid time: 0.0561117600142 op_count: 134708
+Quick time: 0.0567830380677 op_count: 123042
+Randomized quick time: 0.0779795476799 op_count: 123115
+
+DATA SIZE:  8200
+Merge time: 0.082612854427 op_count: 106616
+Hybrid time: 0.0578059082928 op_count: 137142
+Quick time: 0.0579668756783 op_count: 124447
+Randomized quick time: 0.0795941914405 op_count: 124535
+
+DATA SIZE:  8300
+Merge time: 0.0837083092963 op_count: 108116
+Hybrid time: 0.0581822605946 op_count: 139742
+Quick time: 0.0581922199609 op_count: 125537
+Randomized quick time: 0.0799362097697 op_count: 126118
+
+DATA SIZE:  8400
+Merge time: 0.0849990543491 op_count: 109616
+Hybrid time: 0.0595192210183 op_count: 142141
+Quick time: 0.0595417713704 op_count: 128314
+Randomized quick time: 0.0810388918145 op_count: 127849
+
+DATA SIZE:  8500
+Merge time: 0.0862702941296 op_count: 111116
+Hybrid time: 0.0603470217584 op_count: 144658
+Quick time: 0.060583512709 op_count: 130698
+Randomized quick time: 0.0831571079565 op_count: 129554
+
+DATA SIZE:  8600
+Merge time: 0.0870044293339 op_count: 112616
+Hybrid time: 0.0614864933951 op_count: 147283
+Quick time: 0.0611201395708 op_count: 131665
+Randomized quick time: 0.0837384723477 op_count: 132359
+
+DATA SIZE:  8700
+Merge time: 0.0886754350064 op_count: 114116
+Hybrid time: 0.062503223175 op_count: 149751
+Quick time: 0.0624592119948 op_count: 133894
+Randomized quick time: 0.0844784099655 op_count: 133498
+
+DATA SIZE:  8800
+Merge time: 0.0892981566093 op_count: 115616
+Hybrid time: 0.0634690358691 op_count: 152384
+Quick time: 0.0623788693814 op_count: 134007
+Randomized quick time: 0.0851633713223 op_count: 134658
+
+DATA SIZE:  8900
+Merge time: 0.0903988830983 op_count: 117116
+Hybrid time: 0.0646751863715 op_count: 154991
+Quick time: 0.0638469498218 op_count: 136765
+Randomized quick time: 0.0864450817073 op_count: 135961
+
+DATA SIZE:  9000
+Merge time: 0.0917155252972 op_count: 118616
+Hybrid time: 0.0658006590223 op_count: 157560
+Quick time: 0.0652588415567 op_count: 139493
+Randomized quick time: 0.0884910456497 op_count: 139767
+
+DATA SIZE:  9100
+Merge time: 0.0926670680212 op_count: 120116
+Hybrid time: 0.0666306555721 op_count: 160292
+Quick time: 0.0655377094016 op_count: 140314
+Randomized quick time: 0.0887061484071 op_count: 139692
+
+DATA SIZE:  9200
+Merge time: 0.0938451926153 op_count: 121616
+Hybrid time: 0.0678914443037 op_count: 162884
+Quick time: 0.0663773608098 op_count: 141509
+Randomized quick time: 0.0904578207565 op_count: 142204
+
+DATA SIZE:  9300
+Merge time: 0.0951694782437 op_count: 123116
+Hybrid time: 0.0689565964389 op_count: 165610
+Quick time: 0.0667523358416 op_count: 142792
+Randomized quick time: 0.0912458873963 op_count: 143852
+
+DATA SIZE:  9400
+Merge time: 0.0981849816108 op_count: 124616
+Hybrid time: 0.0702229529172 op_count: 168412
+Quick time: 0.0680024193019 op_count: 144975
+Randomized quick time: 0.0916049944895 op_count: 145059
+
+DATA SIZE:  9500
+Merge time: 0.0969871506015 op_count: 126116
+Hybrid time: 0.0710239066697 op_count: 170982
+Quick time: 0.0682076520899 op_count: 146827
+Randomized quick time: 0.0928995947809 op_count: 147356
+
+DATA SIZE:  9600
+Merge time: 0.098091204329 op_count: 127616
+Hybrid time: 0.0717533597147 op_count: 173796
+Quick time: 0.0690364780999 op_count: 148639
+Randomized quick time: 0.0941837188805 op_count: 148986
+
+DATA SIZE:  9700
+Merge time: 0.099050370927 op_count: 129116
+Hybrid time: 0.0732910495608 op_count: 176539
+Quick time: 0.0705589844519 op_count: 151477
+Randomized quick time: 0.0947457065074 op_count: 150918
+
+DATA SIZE:  9800
+Merge time: 0.100309290706 op_count: 130616
+Hybrid time: 0.0741829785629 op_count: 179365
+Quick time: 0.0708828747788 op_count: 151803
+Randomized quick time: 0.0956478910029 op_count: 151160
+
+DATA SIZE:  9900
+Merge time: 0.10196911898 op_count: 132116
+Hybrid time: 0.0754582831058 op_count: 182073
+Quick time: 0.0712739440348 op_count: 153874
+Randomized quick time: 0.0973740545237 op_count: 153965
+
+DATA SIZE:  10000
+Merge time: 0.102367334396 op_count: 133616
+Hybrid time: 0.0764195197993 op_count: 184969
+Quick time: 0.0728085189598 op_count: 156194
+Randomized quick time: 0.0987657649226 op_count: 155567
