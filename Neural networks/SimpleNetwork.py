@@ -70,8 +70,7 @@ class Network:
                 currDelta = currDelta[0][:-1]
             
             self.delta[i - 1] = np.array(np.dot(currDelta, self.theta[i]))
-            for j in xrange(self.structure[i - 1] + 1):
-                self.delta[i - 1][0][j] *= self.a[i - 1][j]
+            self.delta[i - 1][0] *= self.a[i - 1]
                 
         return
 
