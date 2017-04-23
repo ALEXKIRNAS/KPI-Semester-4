@@ -250,12 +250,12 @@ public class Main {
             if (in != null) {
                 try {
                     in.close();
+                    obj = deserializeArr();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-        return (obj = deserializeArr());
+        return obj;
     }
-
 }
