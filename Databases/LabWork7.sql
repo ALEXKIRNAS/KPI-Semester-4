@@ -1,6 +1,9 @@
 -- Task 1
 -- Вивести на екран імена усіх таблиць в 
 -- базі даних та кількість рядків в них.
+
+-- Приклад для БД Northwind
+USE [Northwind]
 SELECT DISTINCT
        [O].[name], 
        [I].[rowcnt] AS [Row count]
@@ -9,8 +12,7 @@ INNER JOIN sysobjects as [O]
            ON [O].id = [I].id
 INNER JOIN INFORMATION_SCHEMA.TABLES as [S]
            ON [O].[name] = [S].[TABLE_NAME]
-WHERE [O].[type] = 'U' AND
-      [S].[TABLE_CATALOG] = 'Northwind'
+WHERE [O].[type] = 'U'
 GO
 
 -- Task 2
@@ -179,30 +181,64 @@ CREATE PROCEDURE [HackerAttack]
 AS
     BEGIN
         -- BEGIN TRAN
-        DECLARE @Sql NVARCHAR(1024) 
-        DECLARE @Cursor CURSOR
+        DECLARE @name NVARCHAR(256)
 
-        SET @Cursor = CURSOR FAST_FORWARD FOR
-                        SELECT DISTINCT sql = 'ALTER TABLE [' + tc2.TABLE_NAME + '] DROP [' + rc1.CONSTRAINT_NAME + ']'
-                        FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc1
-                        LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc2 
-                                  ON tc2.CONSTRAINT_NAME =rc1.CONSTRAINT_NAME
+        DECLARE db_cursor CURSOR FOR 
+            SELECT name 
+            FROM master.dbo.sysdatabases
+            WHERE name NOT IN ('master', 'tempdb', 'model', 'msdb')
 
-        OPEN @Cursor FETCH NEXT FROM @Cursor INTO @Sql
+        OPEN db_cursor
+        FETCH NEXT FROM db_cursor INTO @name
 
-        WHILE (@@FETCH_STATUS = 0)
+        WHILE @@fetch_status = 0
         BEGIN
-            Exec sp_executesql @Sql
-            FETCH NEXT FROM @Cursor INTO @Sql
+	        EXEC('  DECLARE @Sql NVARCHAR(1024)
+			        DECLARE @table_cursor CURSOR
+
+			        SET @table_cursor = CURSOR FAST_FORWARD FOR 
+			        SELECT DISTINCT sql = ''ALTER TABLE ['+@name+'].[dbo].['' + tc2.TABLE_NAME + ''] DROP ['' + rc1.CONSTRAINT_NAME + '']''
+				        FROM ['+@name+'].INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc1
+				        LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc2 
+				                    ON tc2.CONSTRAINT_NAME =rc1.CONSTRAINT_NAME
+
+			        OPEN @table_cursor
+			        FETCH NEXT FROM @table_cursor INTO @Sql
+			        WHILE @@FETCH_STATUS = 0
+			        BEGIN
+				        EXEC(@Sql)
+				        FETCH NEXT FROM @table_cursor INTO @Sql
+			        END
+
+			        CLOSE @table_cursor
+			        DEALLOCATE @table_cursor
+			
+			        DECLARE @tablename NVARCHAR(256)
+			        DECLARE tablenames_cursor CURSOR FOR 
+                        SELECT TABLE_NAME 
+                        FROM ['+@name+'].INFORMATION_SCHEMA.TABLES
+                        WHERE TABLE_TYPE = ''BASE TABLE''
+
+			        OPEN tablenames_cursor
+			        FETCH NEXT FROM tablenames_cursor INTO @tablename
+			        WHILE @@fetch_status = 0
+			        BEGIN
+				        EXEC(''TRUNCATE TABLE ['+@name +'].[dbo].[''+@tablename+'']'');
+				        FETCH NEXT FROM tablenames_cursor INTO @tablename
+			        END
+
+			        CLOSE tablenames_cursor
+			        DEALLOCATE tablenames_cursor');
+	        FETCH NEXT FROM db_cursor INTO @name
         END
+        CLOSE db_cursor
+        DEALLOCATE db_cursor
 
-        CLOSE @Cursor DEALLOCATE @Cursor
-        EXEC sp_MSforeachtable 'TRUNCATE TABLE ?'
-
-        -- ROLLBACK TRAN
+       --  ROLLBACK TRAN
     END
 GO
 
+-- EXEC [dbo].[HackerAttack]
 
 -- Task 6
 -- Створити тригер на таблиці Customers, що при вставці 
@@ -447,10 +483,11 @@ AS
     END
 GO
 
--- Це все не тестилося :3
--- Оскільки даний код викличе зациклення в БД
+-- Тут мала б бути вічна вставка.
 -- Коли відбувається вставка хоть в одну з таблиць,
 -- то починається вічний процес вставок, оскільки
 -- для кожної таблиці висть триггер, який при спрацювані
 -- вставляє в іншу таблицю, що в свою чергу викликає тригер
 -- на вставку в іншу таблицю і так до нескінченності
+-- Але MS SQL підтримує лише 32 рівня вкладеності 
+-- функцій і триггерів, тому СУБД видасть помилку
