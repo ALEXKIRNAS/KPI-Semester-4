@@ -59,6 +59,21 @@ def create_model():
     
     return model
     
+def dump_data():
+    model_json = model.to_json()
+    with open("model.json", "w") as file:
+        file.write(model_json)
+    model.save_weights("mnist_model.h5")
+    return
+    
+def load_neuralNetwork():
+    with open("model.json") as file:
+        model = model_from_json(file.read())
+    model.load_weights("mnist_model.h5")
+    
+    model.compile(loss = "categorical_crossentropy",
+                  optimizer = "SGD", metrics = ["accuracy"])
+    return model
     
 
 def main():
@@ -73,8 +88,8 @@ def main():
     
     scores = model.evaluate(x_test, y_test, verbose = 0)
     print("Accuracy: %.2f%%" % (scores[1] * 100))
+    dump_data()
     
     return
     
 main()
-    
