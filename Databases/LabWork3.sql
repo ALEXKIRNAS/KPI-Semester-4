@@ -107,8 +107,10 @@ GROUP BY [E].[FirstName], [E].[LastName]
 
 ;WITH [CTE] ([OrderID]) AS (
     SELECT DISTINCT [OrderID]
-    FROM [Northwind].[dbo].[Order Details]
-    WHERE [Quantity] > 100
+    FROM [Northwind].[dbo].[Order Details] AS [OD]
+    INNER JOIN [Northwind].[dbo].[Products] AS [P]
+               ON [P].[ProductID] = [OD].[ProductID]
+    WHERE [UnitsInStock] > 100
           AND [Discount] < (SELECT MAX([Discount]) 
                             FROM [Northwind].[dbo].[Order Details])
 )
