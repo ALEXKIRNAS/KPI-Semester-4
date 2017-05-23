@@ -59,14 +59,14 @@ def create_model():
     
     return model
     
-def dump_data():
+def dump_data(model):
     model_json = model.to_json()
     with open("model.json", "w") as file:
         file.write(model_json)
     model.save_weights("mnist_model.h5")
     return
     
-def load_neuralNetwork():
+def load_neuralNetwork(model):
     with open("model.json") as file:
         model = model_from_json(file.read())
     model.load_weights("mnist_model.h5")
@@ -82,13 +82,13 @@ def main():
     x_train, y_train, x_test, y_test = load_data()
     model = create_model()
     
-    model.fit(x_train, y_train, batch_size = 32, epochs = 1,
-              verbose = 1, validation_split = 0.1, shuffle = True)
-    
+    for i in range(30):
+        model.fit(x_train, y_train, batch_size = 32, epochs = 1,
+                  verbose = 1, validation_split = 0.1, shuffle = True)
+        dump_data(model)
     
     scores = model.evaluate(x_test, y_test, verbose = 0)
     print("Accuracy: %.2f%%" % (scores[1] * 100))
-    dump_data()
     
     return
     
