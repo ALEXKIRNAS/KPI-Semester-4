@@ -1,0 +1,6 @@
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\bin\Debug\LabWork.exe.config
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\bin\Debug\LabWork.exe
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\bin\Debug\LabWork.pdb
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\obj\Debug\LabWork.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\obj\Debug\LabWork.exe
+C:\Users\user\Source\Repos\CF\LabWork\LabWork\obj\Debug\LabWork.pdb
