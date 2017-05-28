@@ -1,0 +1,6 @@
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\bin\Debug\LabWork2.exe.config
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\bin\Debug\LabWork2.exe
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\bin\Debug\LabWork2.pdb
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\obj\Debug\LabWork2.csprojResolveAssemblyReference.cache
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\obj\Debug\LabWork2.exe
+D:\C++\KPI-Semester-4\C#\LabWork2\LabWork2\LabWork2\obj\Debug\LabWork2.pdb
